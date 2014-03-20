@@ -1,0 +1,54 @@
+/* Put your CSS here */
+.ember-application {
+    margin: 20px;
+}
+
+#wrapper
+{
+width:900px;
+margin:0 auto;
+background-color:#ddd;
+line-height:40px;
+}
+.navbar h1 
+{
+font-family:Georgia; font-size:36px; line-height:50px; margin:0; color:#fff;
+}
+
+.navbar-inverse a.navbar-brand{padding-bottom:0;color:#fff;font-family:Georgia; letter-spacing:1px;font-size:26px;}
+ul.nav.navbar-nav{float:right;}
+ul.nav.navbar-nav li {font-family:Georgia;font-variant:small-caps;font-size:14px;}
+
+.container .row{margin-top:65px;}
+
+.resume {max-width:800px;}
+.resume h1
+{
+	position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;	
+}
+.section {color:#999;}
+.section-label {text-align:right;color:#000;}
+span.skill-label, .experience .title-time, .experience .title-place{color:#000;}
+span.skill-label{font-style:italic;}
+.experience{padding-left:0;}
+
+.experience .info{ padding-left:0; padding-right:0;padding-top:0px;padding-bottom:8px;}
+/*.experience .title-place, .experience .title-time{font-style:italic;}*/
+
+.experience .title-time{text-align:right;}
+@media (max-width:767px){
+	.container{padding-left:10px !important;padding-right:10px !important;}
+	.section-label{text-align:left;font-size:16px;}
+	.col-xs-12.section {margin-bottom:15px;border-bottom:1px solid #666; padding-left:0;padding-right:0;}
+	.section .col-xs-2, .section .col-xs-9, .section .col-xs-12 {padding-left:0px;}
+	
+	.experience{padding-left:0;}
+	.experience.title-time, .experience.title-place {padding-left:0; padding-right:0;}
+	.experience .title-time {text-align:left;}
+}
+
+@media (min-width:767px){
+	.experience .title-time, .experience .title-place {padding-left:0; padding-right:0;}
+}

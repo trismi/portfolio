@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Trisha Smith</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--script src="js/jquery-1.10.2.min.js"></script-->
+    <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/libs/handlebars-1.1.2.js"></script>
+    <script src="js/libs/ember.1.4.0.js"></script>
+    <!-- script src="js/libs/ember-states.js"></script -->
+    <script src="js/libs/ember-data-latest.min.js"></script>
+    <script src="js/app.js"></script>
+    <!-- to activate the test runner, add the "?test" query string parameter -->
+    <script src="tests/runner.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav.navbar-nav li').click(function(e){
+          $('.nav.navbar-nav li').removeClass('active')
+          $(this).addClass('active');
+      });
+      $('.nav a').on('click', function(){
+
+        setTimeout( function(){        if($('.navbar-toggle').css('display') !='none'){$(".navbar-toggle").trigger( "click" );}}, 500  ) 
+
+      });
+
+    })
+    </script>
+
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+    <script type="text/x-handlebars" data-template-name='application'>
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              {{#link-to 'index' class='navbar-brand'}}Trisha Smith{{/link-to}}
+            </div>
+            <div class="navbar-collapse collapse" style="height: 1px;">
+              <ul class="nav navbar-nav">
+                <li class="active">{{#link-to 'index'}}HOME{{/link-to}}</li>
+                <li>{{#link-to 'projects'}}PROJECTS{{/link-to}}</li>
+                <li>{{#link-to 'resume'}}RESUME{{/link-to}}</li>
+                <li>{{#link-to 'contact'}}CONTACT{{/link-to}}</li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+      </div>    
+      <div class='container row'>    
+      {{outlet}}
+      </div>
+      </div>
+    </script>
+    <script type="text/x-handlebars" data-template-name="index">
+      <h1>Welcome</h1>
+      <p>The site is still under construction, but it&rsquo;s getting there :) </p>
+    </script>
+    <script type="text/x-handlebars" data-template-name="projects">
+      <h1>Projects</h1>
+      <p>The site is still under construction, but it&rsquo;s getting there :) </p>
+      {{#each}}
+        <span {{action 'thing' this}}>{{name}}: {{description}}</span><br />
+      {{/each}}
+    </script>
+    <script type="text/x-handlebars" data-template-name="resume">
+      <div class='resume'>
+      <h1>Resume</h1>
+      {{#each}}
+        <div class='col-xs-12 section'>
+          <div class='col-xs-12 col-sm-2 section-label'><strong>{{label}}</strong></div>
+            {{#if format}}
+          <div class='col-xs-12 col-sm-10 experience'>
+              {{#each data}}
+              <div class='col-xs-12 col-sm-9 title-place'>{{place}}</div>
+              <div class='col-xs-12 col-sm-3 title-time'>{{time}}</div>
+              {{#each info}}<div class='col-xs-12 info'>{{this}}</div>{{/each}}
+              {{/each}}
+            {{else}}
+          <div class='col-xs-12 col-sm-10'>
+            {{#each data}}
+              <p class='skill-section'>
+              {{#if label}}<span class='skill-label'>{{label}}: </span>{{/if}}{{info}}
+              </p>
+            {{/each}}
+
+            {{/if}}
+
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </script>
+    <script type="text/x-handlebars" data-template-name="contact">
+      <h1>Contact</h1>
+      <p>The site is still under construction, but it&rsquo;s getting there :) </p>
+      <p>For now, contact me at trismi (@) gmail.com </p>
+    </script>
+    <div id="blue"></div>
+
+  </body>
+</html>
