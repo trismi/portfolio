@@ -4,20 +4,18 @@ App.Router.map(function() {
   // put your routes here
   this.resource("resume");
   this.resource("projects",function()
-  	{
-  		this.resource("project", {path: "/:project_id"});
-  	});
+	{
+		this.resource("project", {path: "/:id"});
+	});
   this.route("contact");
 });
 
-App.ResumeRoute = Ember.Route.extend(
+App.ResumeRoute = Ember.Route.extend({
+	model : function()
 	{
-		model : function()
-		{
-			return App.RESUME;
-		}
+		return App.RESUME;
 	}
-);
+});
 
 App.RESUME = 
 [
@@ -134,22 +132,140 @@ App.RESUME =
 App.PROJECTS = 
 [
 	{
-		"id" : 1,
-		"name" : "Project 1",
-		"image" : 'images/project1.jpg',
-		"description" : "This is the first project"
+		"id" : "1",
+		"navName" : "INTERACT 2012",
+		"technology" : 
+		[ 
+			{"tech" : "PHP"},
+			{"tech" : "MYSQL"}, 
+			{"tech" : "CMS"}, 
+			{"tech" : "OAUTH"}, 
+			{"tech" : "HTML"}, 
+			{"tech" : "CSS"}, 
+			{"tech" : "JavaScript"}, 
+			{"tech" : "JQuery"}
+		],
+		"fullName" : "Interact 2012 Mobile Site",
+		"images" : 
+		[
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_myagenda.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_speakers.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012.jpg'}
+		],
+		"description" : "The Interact 2012 mobile site was created for the Responsys (now Oracle) company conference, allowing attendees to browse event, speaker, and agenda information. Utilizing social media Oauth logins, users created personalized schedules from conference sessions. All of the content (speakers, agenda items, FAQ) was stored in a CMS that allowed admins to alter the content.",
+		"role" : "Technical lead and developer"
 	},
 	{
-		"id" : 2,
-		"name" : "Project 2",
+		"id" : "2",
+		"navName" : "REI DIGITAL CATALOG",
+		"fullName" : "REI Adventures Digital Catalog",
+		"role" : "Technical lead and developer",
+		"technology" : 
+		[ 
+			{"tech" : "AWS"},
+			{"tech" : "JSON"}, 
+			{"tech" : "JAVASCRIPT"}, 
+			{"tech" : "GOOGLEMAPS"}, 
+			{"tech" : "HTML"}, 
+			{"tech" : "CSS"}, 
+			{"tech" : "JQUERY"}, 
+			{"tech" : "PHP"}
+		],
 		"image" : 'images/project2.jpg',
-		"description" : "This is the second project"
+		"description" : "The digital catalog was made for the REI Adventures group. They wanted an interactive site that engaged customers, portrayed their photography, had a mobile presence, lead generation, social sharing, also provided more feedback and metrics on what people were interested. My favorite part of the project was getting to choose and create the data format so that the catalog content was dynamically generated from the data file. That made it easy to update and change functionality for future iterations of this project. I also enjoyed setting up the website for scalability on AWS services."
 	},
 	{
-		"id" : 3,
-		"name" : "Project 3",
+		"id" : "3",
+		"navName": "SEE'S CHRISTMAS SWEEPSTAKES",
+		"fullName" : "See's Countdown to Christmas Sweepstakes",
 		"image" : 'images/project3.jpg',
-		"description" : "This is the third project"
+		"technology" : 
+		[ 
+			{"tech" : "AWS"},
+			{"tech" : "PHP"}, 
+			{"tech" : "MYSQL"}, 
+			{"tech" : "CMS"}, 
+			{"tech" : "HTML"}, 
+			{"tech" : "CSS"}, 
+			{"tech" : "JAVASCRIPT"}, 
+			{"tech" : "JQUERY"}, 
+			{"tech" : "PHP"}
+		],
+		"description" : "This project was to increase both customer engagement and the list size for See's Candies. It was a really great project to work on, with a great group of creative people. In the end, we came up with a sweepstakes that offered daily and grand prizes. Users needed to check back every day to see if they were daily prize winners; if they didn't win, they still received a fun piece of content. The content was composed of recipes, holiday to-dos, surveys, and Flash games presented in the form of an advent calendar, and was shareable across Facebook, Pinterest, and Twitter.",
+		"role" : "Technical lead and developer"
+	},
+	{
+		"id" : "4",
+		"navName" : "ESPRESSO ELEGANCE",
+
+		"technology" : 
+		[ 
+			{"tech" : "PHP"},
+			{"tech" : "MYSQL"}, 
+			{"tech" : "CMS"}, 
+			{"tech" : "OAUTH"}, 
+			{"tech" : "HTML"}, 
+			{"tech" : "CSS"}, 
+			{"tech" : "JavaScript"}, 
+			{"tech" : "JQuery"}
+		],
+		"fullName" : "Espresso Elegance",
+		"images" : 
+		[
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_myagenda.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_speakers.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012.jpg'}
+		],
+		"description" : "The Interact 2012 mobile site was created for the Responsys (now Oracle) company conference, allowing attendees to browse event, speaker, and agenda information. Utilizing social media Oauth logins, it allowed users to browse and create personalized schedules from conference sessions. All of the content (speakers, agenda items, FAQ) was stored in a CMS that allowed admins to alter the content. ",
+		"role" : "Technical lead and developer"
+	},
+	{
+		"id" : "5",
+		"navName" : "HIP YOGA",
+
+		"technology" : 
+		[ 
+			{"tech" : "PHP"},
+			{"tech" : "MYSQL"}, 
+			{"tech" : "CMS"}, 
+			{"tech" : "OAUTH"}, 
+			{"tech" : "HTML"}, 
+			{"tech" : "CSS"}, 
+			{"tech" : "JavaScript"}, 
+			{"tech" : "JQuery"}
+		],
+		"fullName" : "HIP Yoga",
+		"images" : 
+		[
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_myagenda.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_speakers.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012.jpg'}
+		],
+		"description" : "I worked with a team of designers to create a mobile site for our company conference. The mobile site was created as a way to browse and create personalized schedules from scheduled agenda items. All of the content (speakers, agenda items, FAQ) was stored in a CMS that allowed any user with access to alter the content. Agenda items could be saved to a personalized account that was keyed to a person's Twitter, LinkedIn, or Facebook login through the use of OAuth.",
+		"role" : "Technical lead and developer"
+	},
+	{
+		"id" : "6",
+		"navName" : "RAINIER RESEARCH",
+
+		"technology" : 
+		[ 
+			{"tech" : "HTML"},
+			{"tech" : "CSS"}, 
+			{"tech" : "JAVASCRIPT"}, 
+			{"tech" : "JQUERY"}, 
+			{"tech" : "EXPRESSION ENGINE"}, 
+			{"tech" : "PHP"}
+		],
+		"fullName" : "Rainier Clinical Research",
+		"images" : 
+		[
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_myagenda.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012_speakers.jpg'},
+			{'img' : 'images/projects/interact2012/Interact_Mobile_Web__CMS_03052012.jpg'}
+		],
+		"description" : "I worked with a team of designers to create a mobile site for our company conference. The mobile site was created as a way to browse and create personalized schedules from scheduled agenda items. All of the content (speakers, agenda items, FAQ) was stored in a CMS that allowed any user with access to alter the content. Agenda items could be saved to a personalized account that was keyed to a person's Twitter, LinkedIn, or Facebook login through the use of OAuth.",
+		"role" : "Technical lead and developer"
 	}
 ];
 App.ProjectsRoute = Ember.Route.extend(
@@ -160,6 +276,14 @@ App.ProjectsRoute = Ember.Route.extend(
 		}
 	}
 );
+App.ProjectRoute = Ember.Route.extend({
+	model: function(params)
+	{
+		return App.PROJECTS.findBy('id', params.id)
+
+	}
+
+});
 
 App.ProjectsController = Ember.ArrayController.extend({
 	actions: {
@@ -169,6 +293,7 @@ App.ProjectsController = Ember.ArrayController.extend({
 		}
 	}
 });
+
 
 App.ClickableView = Ember.View.extend({
 	click: function(evt)

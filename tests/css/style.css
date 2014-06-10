@@ -19,9 +19,6 @@ section.projects {border-top:1px solid #aaa;}
 h1,h2,h3,h4 {font-family:Georgia;}
 ul li {font-family:Georgia;font-variant: small-caps;}
 .projects .intro {padding-top:10px;}
-.projects ul {padding-left:0;}
-.projects span.role {font-size:14px;font-variant: small-caps; font-weight:bold;}
-.projects .col-xs-12.col-sm-3 {padding-left:0; }
 .col-xs-9 h3{margin-top:10px;}
 
 .container.row .col-xs-3 {margin-left:0; padding-left:0;}
